@@ -9,13 +9,13 @@
             <h1>Beded EC</h1>
         </div>
 
-        <div class="business">
+        <div id="start" class="business">
             <h2>心地よい最高の眠りへ</h2>
             <p>Beded ECでは、あなたを包み込む最高の睡眠パートナーを見つけることができます</p>
             <div class="slider">
                 <img src="{{ asset('img/sleep_lady.jpeg') }}">
                 <img src="{{ asset('img/bedroom4.jpeg') }}">
-                <img src="{{ asset('img/bedroom9.jpg') }}">
+                <img src="{{ asset('img/light.jpg') }}">
             </div>
             <p>あなたの体にぴったりの寝具。カスタマイズ可能なオプションで、個々のニーズに合った睡眠環境を提供します。</p>
             <p>美しいデザインと優れた機能性を兼ね備えた寝具で、寝室を理想の癒しの場所に変えませんか？</p>
@@ -33,10 +33,10 @@
         </div>
 
         <div class="nextPage">
-            <a href="#">
-                <img class="nextImg" src="{{ asset('img/makura.jpeg') }}" alt="ふかふか枕のベッド">
+            <a href="{{ route('look') }}">
+                <img class="nextImg" src="{{ asset('img/light2.jpeg') }}" alt="ふかふか枕のベッド">
             </a>
-            <a class="nextBtn" href="">next⇨</a>
+            <a class="nextBtn" href="{{ route('look') }}">next⇨</a>
         </div>
 
 

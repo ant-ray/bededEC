@@ -1,0 +1,62 @@
+<?php
+
+namespace App\Mail;
+
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Content;
+use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Queue\SerializesModels;
+
+class UserResetPasswordMail extends Mailable
+{
+    use Queueable, SerializesModels;
+
+    private $user;
+    private $userToken;
+    /**
+     * Create a new message instance.
+     */
+    public function __construct(
+        User $user,
+        UserToken $userToken
+    )
+    {
+        $this->user = $user;
+        $this->userToken = $userToken;
+    }
+
+    /**
+     * Get the message envelope.
+     */
+    public function envelope(): Envelope
+    {
+        return new Envelope(
+            subject: 'User Reset Password Mail',
+        );
+    }
+
+    /**
+     * Build the message.
+     *
+     * @return $this
+     */
+    public function build()
+    {
+        $tokenParam = ['reset_token' => $this->userToken->token];
+        $now = Carbon::now();
+
+        // 48時間後を期限とした署名付きURLを生成
+        $url = URL::temporarySignedRoute('password_reset.edit', $now->addHours(48), $tokenParam);
+
+        return $this->from('送信元のメールアドレス', '送信元の名前')
+            ->to($this->user->email)
+            ->subject('パスワードをリセットする')
+            ->view('mails.password_reset_mail')
+            ->with([
+                'user' => $this->user,
+                'url' => $url,
+            ]);
+    }
+}

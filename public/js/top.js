@@ -1,23 +1,6 @@
 //ロゴのフェードイン
 $(function logoFade() {
-    $('.logo').fadeIn(1600);
-});
-
-//topに戻るボタン
-$(function() {
-    var btn = $('.button');
-    $(window).on('load scroll', function(){
-        if($(this).scrollTop() > 400) {
-            btn.addClass('active');
-        }else{
-            btn.removeClass('active');
-        }
-    });
-    btn.on('click',function () {
-        $('body,html').animate({
-            scrollTop: 0
-        });
-    });
+    $('.logo').fadeIn(3000);
 });
 
 
@@ -71,6 +54,21 @@ $(function nextPageFade() {
             var cntPos = $(this).offset().top;
             if (scroll > cntPos - windowHeight + windowHeight / 3) {
                 $(this).addClass('activeImg');
+            }
+        });
+    });
+});
+
+
+//nextPageのフェードイン
+$(function lookForFade() {
+    $(window).on('scroll load', function () {
+        var scroll = $(this).scrollTop();
+        var windowHeight = $(window).height();
+        $('.lookFor').each(function () {
+            var cntPos = $(this).offset().top;
+            if (scroll > cntPos - windowHeight + windowHeight / 3) {
+                $(this).addClass('activeUp');
             }
         });
     });

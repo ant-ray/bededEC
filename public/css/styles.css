@@ -11,7 +11,7 @@ body {
     flex-direction: column;
 }
 
-.button{
+.button {
     border-radius: 25px;
     position: fixed;
     right: 0;
@@ -26,16 +26,18 @@ body {
     opacity: 0;
     visibility: hidden;
 }
-.button:hover{
+
+.button:hover {
     background-color: #6c6b6b;
     border: 1px solid #fffefe;
 }
-.active{
+
+.active {
     opacity: 1;
     visibility: visible;
 }
 
-/* top */
+/*********************************** top ******************************************/
 .logo {
     padding-top: 250px;
     padding-bottom: 250px;
@@ -58,36 +60,43 @@ body {
     transition: 1.5s;
     position: relative;
 }
-.slider{
-    width:60%;
-    margin:0 auto;
+
+.slider {
+    width: 60%;
+    margin: 0 auto;
 }
+
 .slider .img {
-    width:100%;
+    width: 100%;
     height: 400px;
 }
-.slider .slick-slide{
-    height:auto!important;
-    margin-right: 1vw!important;
-    margin-left: 1vw!important;
+
+.slider .slick-slide {
+    height: auto !important;
+    margin-right: 1vw !important;
+    margin-left: 1vw !important;
 }
-.slider .slick-arrow{
-    z-index:2!important;
+
+.slider .slick-arrow {
+    z-index: 2 !important;
 }
-.slider .slick-next{
-    right:0!important;
+
+.slider .slick-next {
+    right: 0 !important;
 }
-.slider .slick-prev{
-    left:0!important;
+
+.slider .slick-prev {
+    left: 0 !important;
 }
+
 .slider .slick-slide:not(.slick-center) {
     -webkit-filter: blur(5px);
-    -moz-filter:blur(5px);
+    -moz-filter: blur(5px);
     -o-filter: blur(5px);
     -ms-filter: blur(5px);
     filter: blur(5px);
     transition: 0.2s linear;
-  }
+}
 
 
 .me {
@@ -121,7 +130,7 @@ body {
     border: 2px solid white;
 }
 
-.nextBtn{
+.nextBtn {
     margin-top: 150px;
     margin-left: 50px;
     border-radius: 100px;
@@ -136,9 +145,10 @@ body {
     height: 80px;
     transition: all 0.3s ease-out;
     text-decoration: none;
-    color:inherit
+    color: inherit
 }
-.nextBtn:hover{
+
+.nextBtn:hover {
     background-color: #6c6b6b;
     border: 1px solid #fffefe;
     color: #fff;
@@ -148,8 +158,354 @@ body {
     opacity: 1;
     margin-top: 0px;
 }
+
 .activeImg {
     opacity: 1;
     margin-left: 32%;
 }
 
+/************************************ look ***************************************/
+.lookFor {
+    padding-top: 250px;
+    padding-bottom: 180px;
+    color: #ffffff;
+    text-align: center;
+    display: none;
+}
+
+.anderArrow {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-left: 46.5%;
+}
+
+.chevron {
+    position: absolute;
+    width: 100px;
+    height: 8px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+}
+
+.chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: #fff;
+}
+
+.chevron:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+}
+
+.chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+    25% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+
+    67% {
+        opacity: 1;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+}
+
+.bed {
+    padding-top: 100px;
+    padding-bottom: 250px;
+    color: #fff;
+    text-align: center;
+}
+
+.bedBoxWrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bedBox {
+    border-radius: 15px;
+    border: solid;
+    border-color: #fff;
+    padding: 30px;
+    margin-top: 70px;
+    margin-left: 10%;
+    height: 400px;
+    width: 30%;
+    text-align: center;
+    color:inherit;
+    text-decoration: none;
+    opacity: 0;
+    /* トランジションの設定 */
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.bedBox:hover {
+    background-color: rgb(86, 86, 86, 0.8);
+}
+
+.bedBox:hover img {
+    border: solid;
+    border-color: #fff;
+}
+
+.bedBox p {
+    margin: 0;
+    padding: 0;
+}
+
+.bedBox h3 {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.bedBox img {
+    width: 100%;
+    height: 280px;
+    border-radius: 15px;
+}
+
+.activeBedBoxUp {
+    margin-top: 70px;
+    opacity: 1;
+}
+
+.pillowBoxWrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pillow {
+    padding-top: 100px;
+    padding-bottom: 250px;
+    color: #fff;
+    text-align: center;
+}
+
+.pillowBox {
+    border-radius: 15px;
+    border: solid;
+    border-color: #fff;
+    padding: 30px;
+    margin-top: 70px;
+    margin-left: 10%;
+    height: 400px;
+    width: 30%;
+    text-align: center;
+    color:inherit;
+    text-decoration: none;
+    opacity: 0;
+    /* トランジションの設定 */
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.pillowBox:hover {
+    background-color: rgb(86, 86, 86, 0.8);
+}
+
+.pillowBox:hover img {
+    border: solid;
+    border-color: #fff;
+}
+
+.pillowBox p {
+    margin: 0;
+    padding: 0;
+}
+
+.pillowBox h3 {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.pillowBox img {
+    width: 100%;
+    height: 280px;
+    border-radius: 15px;
+}
+
+.activePillowBoxUp {
+    margin-top: 70px;
+    opacity: 1;
+}
+
+.lightBoxWrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.light {
+    padding-top: 100px;
+    padding-bottom: 250px;
+    color: #fff;
+    text-align: center;
+}
+
+.lightBox {
+    border-radius: 15px;
+    border: solid;
+    border-color: #fff;
+    padding: 30px;
+    margin-top: 70px;
+    margin-left: 10%;
+    height: 400px;
+    width: 30%;
+    text-align: center;
+    color:inherit;
+    text-decoration: none;
+    opacity: 0;
+    /* トランジションの設定 */
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.lightBox:hover {
+    background-color: rgb(86, 86, 86, 0.8);
+}
+
+.lightBox:hover img {
+    border: solid;
+    border-color: #fff;
+}
+
+.lightBox p {
+    margin: 0;
+    padding: 0;
+}
+
+.lightBox h3 {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.lightBox img {
+    width: 100%;
+    height: 280px;
+    border-radius: 15px;
+}
+
+.activeLightBoxUp {
+    margin-top: 70px;
+    opacity: 1;
+}
+
+/************************************ look ***************************************/
+
+.detailHead {
+    padding-top: 60px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: #FFF;
+}
+
+.detailWapper{
+    margin-bottom: 45px;
+}
+
+.detailBox{
+    width: 100%;
+    padding-left: 70px;
+    display: flex;
+}
+
+.detailBox img{
+    height: 550px;
+    width: 780px;
+    border-radius: 15px;
+    border: solid;
+    border-color: #fff;
+}
+
+.detail{
+    margin-left: 70px;
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+    text-align: center;
+    border: solid;
+    border-color: #fff;
+    color: #fff;
+    background-color: rgb(86, 86, 86, 0.8);
+    position: relative;
+}
+
+.price{
+    position: absolute;
+    bottom: 30px;
+    padding-left: 70px;
+}
+
+.kinds{
+    position: absolute;
+    bottom: 70px;
+    padding-left: 70px;
+}
+
+.explanation{
+    font-weight: bold;
+}
+
+.purchase{
+    color: #FFF;
+    position: relative;
+}
+
+.purchaseBtn {
+    position: absolute;
+    border-radius: 100px;
+    border: 1px solid #fbf7f7;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+    color: inherit;
+    top: 400px;
+    left: -200px;
+}
+
+.purchaseBtn:hover {
+    background-color: #6c6b6b;
+    border: 1px solid #fffefe;
+    color: #fff;
+}
